@@ -1,0 +1,7 @@
+services:
+    unity-docker-server:
+        volumes:
+        - ./SERVER:/SERVER
+        build:
+            context: .
+            dockerfile: Dockerfile
