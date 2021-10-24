@@ -1,7 +1,15 @@
 services:
     unity-docker-server:
-        volumes:
-        - ./SERVER:/SERVER
-        build:
-            context: .
-            dockerfile: Dockerfile
+      volumes:
+      - ./SERVER:/SERVER
+      build:
+        context: .
+        dockerfile: Dockerfile
+      entrypoint:
+      - "/bin/sh"
+      - "-ecx"
+      - >
+        cd /SERVER &&
+        chmod +x SERVER.x86_64 &&
+        ./SERVER.x86_64
+      
